@@ -359,6 +359,7 @@ nav li:focus{
 }
 .payment_options{
 	position: relative;
+	cursor: pointer;
 }
 .payment_options h4{
 	display: block;
