@@ -484,10 +484,9 @@ nav li:focus{
 	margin-right: 5px;
 }
 
-#btn1,
-#btn2,
-#btn3
-{
+.btn1,
+.btn2,
+.btn3{
 	text-decoration: none;
 	width: 150px;
 	height: 50px;
@@ -504,16 +503,15 @@ nav li:focus{
 	position: relative;
 	top: 27px;
 }
-#btn1{
+.btn1{
 	background-color: var(--red-color);
 }
-#btn2{
+.btn2{
 	background-color: var(--blue-color);
 }
-#btn3{
+.btn3{
 	background-color: var(--green-color);
 }
-
 .section_sixth{
 	height: 590px;
 	width: 100%;
