@@ -1,6 +1,9 @@
 // document.addEventListener('DOMContentLoaded', (event) => {
     
 
+/*
+buttons in wrapper_pricing
+*/
 
 /*
 This code is about to change, to  be shorter. 
@@ -70,6 +73,32 @@ function myF222(){
 prem.addEventListener("mouseover", myF111);
 prem.addEventListener("mouseout", myF222);
 
+/*
+hamburger menu
+*/
+function openSmallNav(){
+    
+    const bars= document.querySelector(".fa-bars");
+    const times= document.querySelector(".fa-times");
+    const nav=document.querySelector("#nav");
+
+    bars.addEventListener("click", function(){
+        nav.style.visibility="visible";
+        bars.style.visibility="hidden";
+        times.style.visibility="visible";
+    })
+}
+function closeSmallNav(){
+    const bars= document.querySelector(".fa-bars");
+    const times= document.querySelector(".fa-times");
+    const nav=document.querySelector("#nav");
+
+    times.addEventListener("click", function(){
+        nav.style.visibility="hidden";
+        bars.style.visibility="visible";
+        times.style.visibility="hidden";
+    })
+}
 //calculator
 
 
@@ -109,31 +138,5 @@ select.addEventListener("click", function(e){
     })
     
 })
-        
-//     opt1.addEventListener("click", function(){
-        
-//     })
-    
-
-// function tryMe(){
-//     if ()
-// }
-// function choseOption(){
-
-
-        
-// }
-
-
-
-
-const opt2=document.querySelector(".opt2");
-const opt3=document.querySelector(".opt3");
-
-
-
-
-
-
 
 // });
