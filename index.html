@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700&display=swap&subset=latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-	      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+		  integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 </head>
 <body>
 	<header class="container section_first">
@@ -98,7 +98,7 @@
 		<div class="wrapper_pricing">
 			<div class="payment_options basic">
 				<h4>Basic</h4>
-				<p>$0</p>
+				<p>0&euro;</p>
 				<ul>
 					<li>100 MB HDD</li>
 					<li>1 Subdomain</li>
@@ -106,11 +106,11 @@
 					<li>Two years license</li>
 					<li>Full support</li>
 				</ul>
-				<a href="#" class="btn1" id="btn1">Begin</a>
+				<a href="#fifthAdded" class="btn1" id="btn1">Begin</a>
 			</div>
 			<div class="payment_options professional">
 				<h4>Professional</h4>
-				<p>$25</p>
+				<p>25&euro;</p>
 				<h6>Limited offer</h6>
 				<ul>
 					<li>500 MB HDD</li>
@@ -119,11 +119,11 @@
 					<li>One year license</li>
 					<li>Full support</li>
 				</ul>
-				<a href="#" class="btn2" id="btn2">Begin</a>
+				<a href="#fifthAdded" class="btn2" id="btn2">Begin</a>
 			</div>
 			<div class="payment_options premium">
 				<h4>Premium</h4>
-				<p>$60</p>
+				<p>60&euro;</p>
 				<h6>Limited offer</h6>
 				<ul>
 					<li>2 GB HDD</li>
@@ -132,61 +132,65 @@
 					<li>Two years license</li>
 					<li>Full support</li>
 				</ul>
-				<a href="#" class="btn3" id="btn3" >Begin</a>
+				<a href="#fifthAdded" class="btn3" id="btn3" >Begin</a>
 			</div>
 		</div>
 	</section>
-	<section class="container section_fifth_added">
+	<section class="container section_fifth_added" id="fifthAdded">
 		<div class="wrapper_calculator_area">
 			<h3>Calculate how much you'll pay</h3>
 			<div class="part_first">
 				<form action="">
-					<input class="input_calc first_input" type="number" name="quantity" placeholder="Products quantity" min="1" step="1" oninput="productsQuantity()">
+					<input class="input_calc first_input" type="number" name="quantity" placeholder="Products quantity" min="1"  step="1"  oninput="productsQuantity()">
 					<input class="input_calc second_input" type="number" name="orders" placeholder="Estimated orders in month" min="1" step="1" oninput="ordersQuantity()">
 					<div class="select">
-						<select class="input_calc third_input " style="font-size: 13px;" style="font-family: Open Sans, sans-serif" >
+						<select hidden class="input_calc third_input " style="font-size: 13px;" style="font-family: Open Sans, sans-serif" >
 							<option value="" hidden>Choose package</option>
 							<option id="opt1" value="Basic" >Basic</option>
 							<option id="opt2" value="Professional" >Professional</option>
 							<option id="opt3" value="Premium" >Premium</option>
 						</select>
-						<div class="select2" hidden>
-							<div class="opt opt1">Basic</div>
-							<div class="opt opt2">Professional</div>
-							<div class="opt opt3">Premium</div>
+						<div class="select_new">
+							<div class="arrow"></div>
+							<div class="input_calc show_here" style="font-size: 13px;" style="font-family: Open Sans, sans-serif;" style="color: #95989A" onclick="showSelect()" onmouseout="hideSelect()"></div>
+							<div class="select2">
+								<div class="opt opt12" onmouseover="opt1Hover()" onclick="opt1()" >Basic</div>
+								<div class="opt opt22" onmouseover="opt2Hover()" onclick="opt2()" data-price="25">Professional</div>
+								<div class="opt opt32" onmouseover="opt3Hover()" onclick="opt3()">Premium</div>
+							</div>
 						</div>
 				</div>
-					<input class="check calc_check" type="checkbox">
+					<input id="checkFirst" class="check calc_check" type="checkbox" onclick="checkAccounting()">
 					<p class="checkbox_label">Accounting</p>
-					<input class="check calc_check" type="checkbox">
+					<input id="checkSecond" class="check calc_check" type="checkbox" onclick="checkTerminal()">
 					<p class="checkbox_label">Rental of a payment terminal</p>
 				</form>
 			</div>
 			<div class="part_second">
 				<div class="calc_rows products">
 					<p>Products</p>
-					<div class="number_of_products"></div>
+					<div class="number_of_products" ></div>
 					<div class="price_of_product"> * 1&euro;</div>
-					<div class="sum sum_of_product_price" style="font-weight: 700;">0&euro;</div>
+					<div class="sum sum_of_product_price" style="font-weight: 700;"></div>
 				</div>
 				<div class="calc_rows orders">
 					<p>Orders</p>
-					<div class="number_of_orders"></div>
-					<div class="price_of_order"> * 0.2&euro;</div>
-					<div class="sum sum_of_order_price" style="font-weight: 700;">0&euro;</div>
+					<div class="number_of_orders" style="width: 50px;"></div>
+					<div class="price_of_order"> * 0.6&euro;</div>
+					<div class="sum sum_of_order_price" style="font-weight: 700;"></div>
 					</div>
 				<div class="calc_rows package">
 					<p>Package</p>
 					<div class="choosen_package"></div>
-					<div class="sum sum_of_package_priece" style="font-weight: 700;">&euro;</div>
+					<div class="sum sum_of_package_price" style="font-weight: 700;"></div>
 				</div>
 				<div class="calc_rows accounting">
-					<p>Acconting</p>
-					<div class="sum cost_of_accounting" style="font-weight: 700;">&euro;</div>
+					<p>Accounting</p>
+					<div class="sum cost_of_accounting" style="font-weight: 700;" id="accCost"></div>
 				</div>
 				<div class="calc_rows terminal">
 					<p>Terminal</p>
-					<div class="sum cost_of_terminal" style="font-weight: 700;">&euro;</div>
+					<div class="sum cost_of_terminal" style="font-weight: 700;" id="termCost"></div>
 				</div>
 				<div class="total">
 					<p>Total</p>

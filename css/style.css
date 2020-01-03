@@ -8,6 +8,9 @@
 	--mini-text: #A5A5A5;
 	--section-color: #F7F7F7;
 }
+html{
+	scroll-behavior: smooth;
+}
 body{
 	font-family: 'Raleway', sans-serif;
 	font-family: 'Open Sans', sans-serif;
@@ -371,6 +374,7 @@ nav li:focus{
 .wrapper_pricing{
 	width: 1266px;
 	display: flex;
+	margin: 0 auto;
 }
 .payment_options{
 	position: relative;
@@ -396,7 +400,7 @@ nav li:focus{
 	width: 372px;
 	height: 461px;
 	border-radius: 18px;
-	margin: auto;
+	margin: 0 auto;
 }
 .basic:hover,
 .professional:hover,
@@ -614,7 +618,12 @@ select{
 	position: relative;
 	z-index: 100;
 }
-.select::after{
+.show_here{
+	padding: 12px 20px;
+	height: 16px;
+	width: 400px;
+}
+.arrow{
 	content: "";
 	position: absolute;
 	display: block;
@@ -658,6 +667,8 @@ select{
 	font-size: 13px;
 	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
+	position: relative;
+	/* top: 40px; */
 }
 a{
 	text-decoration-line: none;
@@ -726,28 +737,38 @@ a{
 	margin-bottom: 8px;
 	color: var(--section-color);
 }
-.products{
-	padding: 8px 20px;
-	display: flex;
-	justify-content: space-between;
-}
-.orders{
-	padding: 8px 20px;
-	display: flex;
-	justify-content: space-between;
-}
+.products,
+.orders,
 .package{
 	padding: 8px 20px;
 	display: flex;
 	justify-content: space-between;
 }
-.accounting{
-	padding: 8px 20px;
-	display: flex;
-	justify-content: space-between;
+
+.number_of_products,
+.sum_of_product_price,
+.number_of_orders,
+.sum_of_order_price,
+.sum_of_package_price{
+	width: 80px;
+	margin: 0 10px;
+	overflow: hidden;
 }
+.price_of_product{
+	position: relative;
+	left: -30px;
+}
+.price_of_order{
+	position: relative;
+	left: -7px;
+}
+.package p{
+	margin-right: 80px;
+}
+.accounting, 
 .terminal{
-	padding: 8px 20px;
+	width: 325px;
+	padding: 8px 80px 8px 20px;
 	display: flex;
 	justify-content: space-between;
 }
