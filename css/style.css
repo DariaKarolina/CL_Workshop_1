@@ -1082,7 +1082,7 @@ a{
 		color: var(--mini-text);
 		font-family: "Open Sans";
 		font-weight: bold;
-		padding: 0;	
+		padding: 10px 0 0 0;	
 	}
 	nav li:hover,
 	nav li:focus{
